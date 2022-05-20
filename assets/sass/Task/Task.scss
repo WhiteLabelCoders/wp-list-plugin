@@ -1,0 +1,60 @@
+.task {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid var(--color-grey-600);
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  &--done {
+
+    .task__name {
+      text-decoration: line-through;
+      font-style: italic;
+      color: var(--color-grey-600);
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    width: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      width: calc(100% - 80px);
+    }
+  }
+
+  &__status {
+    margin-right: 10px;
+  }
+
+  &__actions {
+    width: 100px;
+
+    @media screen and (max-width: 767px) {
+      width: 80px;
+    }
+  }
+
+  &__name {
+    overflow: hidden;
+    width: calc(100% - 35px);
+
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      border: none;
+      border-bottom: 2px solid var(--color-blue-400);
+    }
+  }
+}

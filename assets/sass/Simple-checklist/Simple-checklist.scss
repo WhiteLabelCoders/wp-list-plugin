@@ -1,0 +1,91 @@
+.simple-checklist {
+  margin: 100px 0;
+  font-family: 'Open-Sans', sans-serif;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+
+  > * {
+    font-family: 'Open-Sans', sans-serif;
+  }
+
+  input[type="checkbox"] {
+    border: 3px solid var(--color-blue-400);
+    background-color: var(--color-white);
+  }
+
+  input[type="checkbox"]:checked {
+    color: var(--color-blue-400);
+  }
+
+  input[type="checkbox"]:after {
+    content: "";
+    opacity: 0;
+    display: block;
+    left: 5px;
+    top: 2px;
+    position: absolute;
+    width: 7px;
+    height: 13px;
+    border: 3px solid var(--color-blue-400);
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(30deg);
+  }
+
+  input[type="checkbox"]:checked:after {
+    opacity: 1;
+  }
+
+  &__header,
+  &__app {
+    padding: 20px;
+  }
+
+  &__header {
+    background-color: var(--color-blue-400);  
+  }
+
+  &__title {
+    color: var(--color-white);
+  }
+
+  &__tasks {
+
+    @media screen and (max-height: 767px) {
+      height: 50vh;
+    }
+    overflow-y: scroll;
+  }
+
+  &__button, button, button:not(:hover):not(:active) {
+      padding: 15px;
+      background-color: var(--color-white);
+      color: var(--color-blue-400);
+      line-height: 1;
+      border: none;
+
+      @media screen and (max-width: 767px) {
+        padding: 10px;
+
+        .dashicons,
+        .dashicons:before {
+          font-size: 15px;
+        }
+      }
+
+      &:hover {
+        color: var(--color-blue-800);
+      }
+  }
+
+  &__addTask {
+    margin-top: 20px;
+    display: flex;
+  }
+
+  &__taskName {
+    width: calc(100% - 50px);
+  }
+}
