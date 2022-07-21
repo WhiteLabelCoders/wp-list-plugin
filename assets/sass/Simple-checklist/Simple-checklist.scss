@@ -1,91 +1,98 @@
 .simple-checklist {
-  margin: 100px 0;
-  font-family: 'Open-Sans', sans-serif;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: var(--color-white);
-
-  > * {
+    margin: 100px 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 900px;
     font-family: 'Open-Sans', sans-serif;
-  }
-
-  input[type="checkbox"] {
-    border: 3px solid var(--color-blue-400);
     background-color: var(--color-white);
-  }
+    border: 1px solid var(--color-grey-600);
+    border-radius: 8px;
+    overflow: hidden;
 
-  input[type="checkbox"]:checked {
-    color: var(--color-blue-400);
-  }
-
-  input[type="checkbox"]:after {
-    content: "";
-    opacity: 0;
-    display: block;
-    left: 5px;
-    top: 2px;
-    position: absolute;
-    width: 7px;
-    height: 13px;
-    border: 3px solid var(--color-blue-400);
-    border-top: 0;
-    border-left: 0;
-    transform: rotate(30deg);
-  }
-
-  input[type="checkbox"]:checked:after {
-    opacity: 1;
-  }
-
-  &__header,
-  &__app {
-    padding: 20px;
-  }
-
-  &__header {
-    background-color: var(--color-blue-400);  
-  }
-
-  &__title {
-    color: var(--color-white);
-  }
-
-  &__tasks {
-
-    @media screen and (max-height: 767px) {
-      height: 50vh;
+    >* {
+        font-family: 'Open-Sans', sans-serif;
     }
-    overflow-y: scroll;
-  }
 
-  &__button, button, button:not(:hover):not(:active) {
-      padding: 15px;
-      background-color: var(--color-white);
-      color: var(--color-blue-400);
-      line-height: 1;
-      border: none;
+    input[type="checkbox"] {
+        border: 3px solid var(--color-blue-400);
+        background-color: var(--color-white);
+    }
 
-      @media screen and (max-width: 767px) {
-        padding: 10px;
+    input[type="checkbox"]:checked {
+        color: var(--color-blue-400);
+    }
 
-        .dashicons,
-        .dashicons:before {
-          font-size: 15px;
+    input[type="checkbox"]:after {
+        content: "";
+        opacity: 0;
+        display: block;
+        left: 5px;
+        top: 2px;
+        position: absolute;
+        width: 7px;
+        height: 13px;
+        border: 3px solid var(--color-blue-400);
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(30deg);
+    }
+
+    input[type="checkbox"]:checked:after {
+        opacity: 1;
+    }
+
+    &__header,
+    &__app {
+        padding: 20px;
+    }
+
+    &__header {
+        background-color: var(--color-blue-400);
+    }
+
+    &__title {
+        color: var(--color-white);
+    }
+
+    &__tasks {
+        overflow-y: scroll;
+
+        @media screen and (max-height: 767px) {
+            height: 50vh;
         }
-      }
+    }
 
-      &:hover {
-        color: var(--color-blue-800);
-      }
-  }
+    &__button,
+    button,
+    button:not(:hover):not(:active) {
+        padding: 15px;
+        line-height: 1;
+        background-color: var(--color-white);
+        color: var(--color-blue-400);
+        border: none;
 
-  &__addTask {
-    margin-top: 20px;
-    display: flex;
-  }
+        &:hover {
+            color: var(--color-blue-800);
+        }
 
-  &__taskName {
-    width: calc(100% - 50px);
-  }
+        @media screen and (max-width: 767px) {
+            padding: 10px;
+
+            .dashicons,
+            .dashicons:before {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__addTask {
+        margin-top: 20px;
+        display: flex;
+    }
+
+    &__taskName {
+        width: calc(100% - 50px);
+        border-radius: 8px;
+    }
 }

@@ -81,7 +81,7 @@ class SimpleChecklist {
           $disabled = 'disabled';
         }
 
-        $response['html'] .= '<div class="task ' . $statusClass . '" data-id="'. $task->ID .'">';
+        $response['html'] .= '<div class="task ' . $statusClass . '" data-id="'. $task->ID .'" role="listitem">';
         $response['html'] .= '<div class="task__content">';
         $response['html'] .= '<input type="checkbox" class="checkbox task__status" name="task_status" '. $status .'/>';
         $response['html'] .= '<span class="task__name" contenteditable="true">' . $task->post_title . '</span>';
@@ -176,8 +176,8 @@ class SimpleChecklist {
         <header class="simple-checklist__header">
           <h2 class="simple-checklist__title"><?= __('Your list', 'simple-checklist' );?></h2>
         </header>
-        <div class="simple-checklist__app">
-          <div class="simple-checklist__tasks"></div>
+        <form class="simple-checklist__app">
+          <div class="simple-checklist__tasks" role="list"></div>
           <div class="simple-checklist__addTask">
             <input type="text" name="taskTitle" class="simple-checklist__taskName" min-length="3" placeholder="Type title of task..." />
             <button type="submit" class="add-task"><span class="dashicons dashicons-insert"></span></button>
